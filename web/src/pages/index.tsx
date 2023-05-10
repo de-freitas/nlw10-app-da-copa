@@ -4,7 +4,7 @@ interface HomeProps {
 
 export default function Home(props: HomeProps) {
   return (
-    <h1> Contador: {props.count}</h1>
+    <h1 className="text"> Contador: {props.count}</h1>
   )
 }
 
