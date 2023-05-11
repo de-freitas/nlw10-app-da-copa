@@ -4,7 +4,13 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lexend:wght@500;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+
+      <body className='bg-gray-900 bg-app bg-no-repeat bg-cover'>
         <Main />
         <NextScript />
       </body>
