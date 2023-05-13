@@ -1,3 +1,4 @@
+import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
 
 import appPreviewImg from '../assets/app-nlw-copa-preview.png'
@@ -16,8 +17,6 @@ interface HomeProps {
 
 export default function Home(props: HomeProps) {
   const [ poolTitle, setPoolTitle ] = useState('')
-
-  console.log(poolTitle)
 
   async function createPool(event: FormEvent) {
     event.preventDefault()
@@ -105,10 +104,6 @@ export default function Home(props: HomeProps) {
 }
 
 
-// interface HomeProps {
-//   count: number;
-// }
-
 export const getServerSideProps = async() => {
 
   const [ poolCountResponse, guessCountResponse, userCountResponse ] = await Promise.all([
@@ -125,3 +120,28 @@ export const getServerSideProps = async() => {
     }
   }
 }
+
+
+// export const getStaticProps: GetStaticProps = async() => {
+  
+//   const [ poolCountResponse, guessCountResponse, userCountResponse ] = await Promise.all([
+//     api.get('/pools/count'),
+//     api.get('/guesses/count'),
+//     api.get('/users/count')
+//   ])
+
+//   console.log(poolCountResponse.data.count, guessCountResponse.data.count, userCountResponse.data.count )
+//   const poolCount = poolCountResponse.data.count
+//   const guessCount = guessCountResponse.data.count
+//   const userCount = userCountResponse.data.count
+
+//   return {
+//     props: {
+//       poolCount,
+//       guessCount,
+//       userCount,
+//     },
+//     revalidate: 5
+//   }
+  
+// }
