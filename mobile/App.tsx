@@ -20,7 +20,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-          { fontsLoaded ? <Pools/> : <Loading/> }
+          { fontsLoaded ? <SignIn/> : <Loading/> }
           </AuthContextProvider>
     </NativeBaseProvider>
   );
